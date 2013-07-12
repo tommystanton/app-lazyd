@@ -26,8 +26,9 @@ sub run {
 
     $del->add_post({
 	url => $url,
-	tags => join(" ", @tags, split(/\W/, "$url  $title")),
-	description => $url,
+	tags => join( ", ", @tags ),
+	# ("description" actually ends up being the title of the post)
+	description => $title,
     });
 }
 
